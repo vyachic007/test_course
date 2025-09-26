@@ -1,10 +1,11 @@
 package by.slava_borisov.hangman;
 
-import lombok.AllArgsConstructor;
-
-@AllArgsConstructor
 public class GameLogic {
     private WordBank wordBank;
+
+    public GameLogic() {
+        this.wordBank = new WordBank();
+    }
 
     public GameState initGame() {
         String word = wordBank.getRandomWord();
