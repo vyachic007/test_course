@@ -9,12 +9,15 @@ public class ExchangeRates {
     private Map<String, Double> rates = new HashMap<>();
     private String baseCurrency;
 
-    public void addRate(String currency, double rate) {
+    public void addRate(
+            String currency,
+            double rate
+    ) {
         rates.put(currency, rate);
     }
 
     public Double getRate(String currency) {
-       return rates.get(currency);
+        return rates.get(currency);
     }
 
 
