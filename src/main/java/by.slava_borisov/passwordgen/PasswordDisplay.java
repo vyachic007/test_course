@@ -13,8 +13,17 @@ public class PasswordDisplay {
     }
 
     public PasswordConfig getPasswordConfig() {
-        System.out.print("Введите длину пароля (8-12): ");
-        int length = scanner.nextInt();
+        int length;
+        while (true) {
+            System.out.print("Введите длину пароля (8-12): ");
+            length = scanner.nextInt();
+
+            if (length >= 8 && length <= 12) {
+                break;
+            } else {
+                System.out.println("Ошибка: длина должна быть от 8 до 12!");
+            }
+        }
 
         System.out.print("Использовать заглавные буквы? (да/нет): ");
         boolean useUppercase = scanner.next().equalsIgnoreCase("да");
@@ -32,7 +41,7 @@ public class PasswordDisplay {
     }
 
     public void showPassword(String password) {
-        System.out.println("Сгенерированный пароль: " + password);
+        System.out.println("\nСгенерированный пароль: " + password);
     }
 
 }

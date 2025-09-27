@@ -12,7 +12,7 @@ public class PasswordConfig {
     private boolean useDigits;
     private boolean useSpecialChars;
 
-    public boolean bisValidConfig() {
+    public boolean isValidConfig() {
         return length >= 8 && length <= 12
                 && (useUppercase || useLowercase || useDigits || useSpecialChars);
     }

@@ -48,5 +48,4 @@ public class Main {
         scanner.close();
     }
 
-    // TODO проверку на ввод данных
 }
