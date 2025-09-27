@@ -15,15 +15,22 @@ public class Main {
         display.showWelcomeMessage();
         display.showAvailableCurrencies(exchangeRates.getAvailableCurrencies());
 
-        Scanner scanner = new Scanner(System.in).useLocale(Locale.US);;
+        Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
+        ;
 
         while (true) {
+            double amount = 0;
             System.out.print("Введите сумму конвертации: ");
-            double amount = scanner.nextDouble();
+            String amountStr = scanner.next();
+            try {
+                amount = Double.parseDouble(amountStr);
+            } catch (NumberFormatException e) {
+                System.out.println("Ошибка: введите число!");
+                continue;
+            }
 
             System.out.println("Введите исходную валюту:");
             String fromCurrency = scanner.next().toUpperCase();
-
             if (!exchangeRates.getAvailableCurrencies().contains(fromCurrency)) {
                 System.out.printf("Валюта %s не найдена\n", fromCurrency);
                 continue;
@@ -40,4 +47,6 @@ public class Main {
         }
         scanner.close();
     }
+
+    // TODO проверку на ввод данных
 }

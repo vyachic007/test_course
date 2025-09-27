@@ -22,7 +22,7 @@ public class CurrencyDisplay {
             Map<String, Double> results
     ) {
         System.out.println("Результаты конвертации: " + amount + " " + fromCurrency);
-       results.forEach((c, r) -> System.out.println(c + ": " + r));
+       results.forEach((c, r) -> System.out.printf("%s: %.2f\n", c, r));
     }
 
 
